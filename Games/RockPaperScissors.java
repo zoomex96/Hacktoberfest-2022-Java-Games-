@@ -14,25 +14,22 @@ public class RockPaperScissors {
     }
 
     static void playRockPaperScissors(Scanner scanner) {
-        // Getting input from the user
         System.out.println("Make a move! (rock/paper/scissors)");
         String playerMove = scanner.nextLine();
 
-        // Getting input from the computer
         Random random = new Random();
         int randomNumber = random.nextInt(3);
 
         String computerMove;
         if (randomNumber == 0) {
-            computerMove = "rock";
+            computerMove = "Rock";
         } else if (randomNumber == 1) {
-            computerMove = "paper";
+            computerMove = "Paper";
         } else {
-            computerMove = "scissors";
+            computerMove = "Scissors";
         }
         System.out.println("Computer chose " + computerMove + "!");
 
-        // Print results
         if (playerMove.equals(computerMove)) {
             System.out.println("It's a draw!");
         } else if (playerWins(playerMove, computerMove)) {
@@ -43,12 +40,12 @@ public class RockPaperScissors {
     }
 
     static boolean playerWins(String playerMove, String computerMove) {
-        if (playerMove.equals("rock")) {
-            return computerMove.equals("scissors");
-        } else if (playerMove.equals("paper")) {
-            return computerMove.equals("rock");
+        if (playerMove.equals("Rock")) {
+            return computerMove.equals("Scissors");
+        } else if (playerMove.equals("Paper")) {
+            return computerMove.equals("Rock");
         } else {
-            return computerMove.equals("paper");
+            return computerMove.equals("Paper");
         }
     }
 }
